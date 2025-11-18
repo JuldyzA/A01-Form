@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <script src="/index.js" defer></script>
+    <title>Document Signup</title>
+</head>
+<body>
+    
+    <form action="/signup" method="post" name="signupForm" class="signup-form">
+        <h1>Signup</h1>
+        <fieldset >
+            <legend>
+                <span class="legend-circle">1</span>
+                Account Info
+            </legend> 
+            
+            <label for="fullName" class="visually-hidden">Full Name</label>
+            <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Full name ..."
+                aria-label="Username"
+                required
+            />
+            
+            <label for="email" class="visually-hidden">Email address</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                placeholder="Email address ..."
+                aria-label="Email address"
+                required
+            />
+            <label for="password" class="visually-hidden">Password</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password ..."
+                 minlength="12"
+                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{12,}"
+                title="At least 12 characters, including uppercase, lowercase, a number, and a symbol."
+                aria-label="Username containing only alpha-numeric characters"
+                required
+            />
+            <p class="account-info">Minimum 12 Characters.</p>
+            <p class="account-info">Must include uppercase, lowercase, number and symbol.</p>
+        </fieldset>
+<!-- Skills section -->
+        <fieldset>
+            <legend>
+                <span class="legend-circle">2</span>
+                Dev Skills
+            </legend>
+            
+            <fieldset class="sub-fieldset">
+                <h3>Core Languages</h3>
+                <label>
+                <input type="checkbox" name="languages" value="HTML" />
+                HTML
+                </label>
+                <label>
+                <input type="checkbox" name="languages" value="CSS" />
+                CSS
+                </label>        
+                <label>
+                <input type="checkbox" name="languages" value="JavaScript" />
+                JavaScript
+                </label>    
+                <label>
+                <input type="checkbox" name="languages" value="PHP" />     
+                PHP
+                </label>
+                <label>
+                <input type="checkbox" name="languages" value="C#" />              
+                C#
+                </label>
+                <label>
+                <input type="checkbox" name="topics" value="Kotlin" />              
+                Kotlin
+                </label>
+            </fieldset>
+
+            <fieldset class="sub-fieldset">
+                <h3>Libraries/Frameworks</h3>
+                <label >
+                <input type="checkbox" name="frameworks" value="React" />
+                React   
+                </label>
+                <label >
+                <input type="checkbox" name="frameworks" value="Angular" />
+                Angular   
+                </label>
+                <label >
+                <input type="checkbox" name="frameworks" value="Vue" />
+                Vue.js
+                </label>
+            </fieldset>
+
+            <fieldset class="sub-fieldset">
+                <h3>Dev Ops</h3>
+                <label >
+                <input type="checkbox" name="devops" value="Docker" />
+                Docker   
+                </label>
+                <label >
+                <input type="checkbox" name="devops" value="Gulp" />
+                Gulp  
+                </label>
+                <label >
+                <input type="checkbox" name="devops" value="Docker" />
+                Docker   
+                </label>
+            </fieldset>       
+        </fieldset>
+<!-- Experience section-->
+        <fieldset>
+            <legend>
+                <span class="legend-circle">3</span>
+                Experience
+            </legend>
+            <label class="visually-hidden"> Experience level</label>
+            <label>
+                <input type="radio" name="experience" value="beginner" required />
+                Beginner
+            </label>
+            <label>
+                <input type="radio" name="experience" value="intermediate" />
+                Intermediate
+            </label>
+            <label>
+                <input type="radio" name="experience" value="advanced" />
+                Advanced
+            </label>
+        </fieldset>
+<!-- Referral field -->
+        <fieldset class="experience">
+            <legend>
+                <span class="legend-circle">4</span>
+                Other
+            </legend>
+            <label for="referrer" class="visually-hidden">How did you hear about us?</label>
+            <p class="field-title">How did you hear about us?</p>
+            <select id="referrer" name="referrer" required>
+                <option value="">Please select...</option>
+
+                <optgroup label="Media">
+                    <option value="internet">Internet</option>
+                    <option value="radio">Radio</option>
+                    <option value="tv">TV</option>
+                    <option value="newspaper">Newspaper</option>
+                </optgroup>
+
+                <optgroup label="Person">
+                    <option value="friend">Friend</option>
+                    <option value="family">Family</option>
+                    <option value="colleague">Colleague</option>
+                </optgroup>
+
+                <optgroup label="Other">
+                    <option value="magic">Magic!</option>
+                    <option value="other">Other...</option>
+                </optgroup>
+            </select>
+        
+        <div id="extra-details" class="extra-details">
+            <label for="details" class="visually-hidden">Additional Details</label>
+            <p class="field-title">Details, please</p>
+            <textarea
+                    id="details"
+                    name="details"
+                    rows="2"
+                    placeholder="Do tell!"
+                ></textarea>
+        </div>
+        <div id="comments" class="comments">
+            <label for="comments" class="visually-hidden">Comments</label>
+            <p class="field-title">Comments</p>
+            <textarea
+                    id="comments"
+                    name="comments"
+                    rows="6"
+                ></textarea>
+        </div>
+        </fieldset>
+
+        <div class="form-actions">
+            <input type="submit" value="Submit" class="btn btn-submit"/>
+            <button type="reset" class="btn btn-reset">Clear Form</button>
+        </div>
+        
+    </form>
+</body>
+</html>
